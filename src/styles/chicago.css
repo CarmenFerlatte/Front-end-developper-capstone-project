@@ -1,0 +1,67 @@
+.container__chicago {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1280px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.container__chicago-apropos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 50%;
+    height: auto;
+}
+
+.container__chicago-apropos__titre {
+    font-size: 2rem;
+}
+
+.container__chicago-apropos__texte {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.container__chicago-apropos__texte p {
+    font-weight: lighter;
+}
+
+.container__chicago-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    justify-items: baseline;
+    align-items: stretch;
+    width: 50%;
+    height: auto;
+    position: relative
+}
+
+.container__chicago-images img {
+    width: 30%;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 0.5px #495e57;
+}
+
+
+.container__chicago-images .resto-1 {
+    position: relative;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+
+.container__chicago-images .resto-2 {
+    position: absolute;
+    top: 40%; /* Positionner à la moitié de l'image */
+    left: 60%; /* Centrer horizontalement */
+    transform: translate(-40%, -50%); /* Ajuster pour que le point de départ soit au centre */
+}

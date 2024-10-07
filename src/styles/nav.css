@@ -1,0 +1,118 @@
+/*----------------------------*/
+/*-----------NAVBAR-----------*/
+/*----------------------------*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0 auto;
+    width: 1280px;
+    height: 100px;
+    border-bottom: 1px solid #363a3e;
+
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  img {
+    height: 60px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .navbar__burger {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+    border: none;
+    color: #495e57;
+  }
+
+  .navbar__menu {
+    display: inline-block;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar__menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    width: auto;
+    margin-left: auto;
+  }
+
+    .navbar__menu ul li {
+        display: inline-block;
+        font-size: 18px;
+    }
+
+    .navbar__menu ul li a {
+        text-decoration: none;
+        color: #495e57;
+      
+    }
+
+    .navbar__menu ul li a:hover {
+        color: #EDEFEE;
+        background-color: #495e57;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+/*----------------------------*/
+/*-----------MEDIA-----------*/
+/*----------------------------*/
+
+@media screen and (max-width: 900px) {
+  .navbar__menu ul li {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .navbar__burger {
+    display: block;
+  }
+
+  .navbar__menu {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar__menu--open {
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #333333;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__menu ul {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .navbar__menu ul li {
+    margin: 10px 0;
+  }
+}
