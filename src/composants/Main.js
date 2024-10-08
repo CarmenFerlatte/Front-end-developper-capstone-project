@@ -3,7 +3,7 @@ import '../styles/main.css';
 import Specialisations from './Specialisations';
 import Chicago from './Chicago';
 import Temoignages from './Temoignages';
-import BookingForm from './BookingForm';
+import BookingPage from './BookingPage';
 
 const initializeAvailableTimes = () => {
   return [
@@ -30,9 +30,9 @@ const Main = () => {
       <Specialisations/>
       <Temoignages/>
       <Chicago/>
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch}/>
+      <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
     </div>
-  )
-}
+  );
+};
 
 export default Main;
