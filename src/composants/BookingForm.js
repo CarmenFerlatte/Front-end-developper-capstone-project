@@ -41,15 +41,19 @@ const BookingForm = ({ availableTimes, dispatch }) => {
          id="res-date"
          value={date}
          onChange={handleDateChange}
+         aria-required="true"
+         aria-label="Sélectionnez la date"
          />
-         
+
          {availableTimes && availableTimes.length === 0 && <p className="red">Désolé, il n'y a pas d'heures disponibles pour cette date. Veuillez choisir une autre date.</p>}
-         
+
          <label htmlFor="res-time">Sélectionnez l'heure : <span className='red'>*</span></label>
          <select
          id="res-time"
          value={time}
          onChange={(e) => setTime(e.target.value)}
+         aria-required="true"
+         aria-label="Sélectionnez l'heure"
          >
             {availableTimes && availableTimes.map((time, index) => (
                <option key={index} value={time}>{time}</option>
@@ -64,7 +68,9 @@ const BookingForm = ({ availableTimes, dispatch }) => {
             max="10"
             id="guests"
             value={guests} 
-            onChange={(e) => setGuests(e.target.value)} 
+            onChange={(e) => setGuests(e.target.value)}
+            aria-required="true"
+            aria-label="Nombre de personnes"
          />
          
          <label htmlFor="occasion">Évènement : <span className='red'>*</span></label>
@@ -72,11 +78,13 @@ const BookingForm = ({ availableTimes, dispatch }) => {
             id="occasion"
             value={occasion}
             onChange={(e) => setOccasion(e.target.value)}
+            aria-required="true"
+            aria-label="Évènement"
          >
             <option>Fête</option>
             <option>Anniversaire</option>
          </select>
-         <input className="btn-submit" type="submit" value="Réservez" />
+         <input className="btn-submit" type="submit" value="Réservez" aria-label="Réservez" />
       </form>
 
     </div>
