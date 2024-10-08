@@ -60,8 +60,9 @@
     }
 
     .navbar__menu ul li a {
-        text-decoration: none;
+        text-decoration: underline;
         color: #495e57;
+        padding: 10px;
       
     }
 
@@ -69,7 +70,14 @@
         color: #EDEFEE;
         background-color: #495e57;
         border-radius: 5px;
-        padding: 5px;
+        text-decoration: none;
+    }
+
+    .navbar__menu ul li a.active {
+        color: #EDEFEE;
+        background-color: #495e57;
+        border-radius: 5px;
+        text-decoration: none;
     }
 
 /*----------------------------*/

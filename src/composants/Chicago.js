@@ -8,7 +8,7 @@ const Chicago = () => {
   return (
     <div>
       <div className='container__chicago'>
-        
+
           <div className='container__chicago-apropos'>
               <div className='container__chicago-apropos__titre'>
               <h2>Little Lemon</h2>
@@ -23,7 +23,7 @@ const Chicago = () => {
             <img className='resto-2' src={resto2} alt="plat cuisiné" />
 
           </div>
-       
+
         </div>
     </div>
   )
