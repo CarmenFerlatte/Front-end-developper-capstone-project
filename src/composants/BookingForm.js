@@ -59,7 +59,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
                <option key={index} value={time}>{time}</option>
             ))}
          </select>
-         
+
          <label htmlFor="guests">Nombre de personnes : <span className='red'>*</span> </label>
          <input
             type="number"
@@ -72,7 +72,7 @@ const BookingForm = ({ availableTimes, dispatch }) => {
             aria-required="true"
             aria-label="Nombre de personnes"
          />
-         
+
          <label htmlFor="occasion">Évènement : <span className='red'>*</span></label>
          <select
             id="occasion"

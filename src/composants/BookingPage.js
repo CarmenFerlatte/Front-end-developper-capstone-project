@@ -7,7 +7,7 @@ const BookingPage = ({ availableTimes, dispatch }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen (false);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div>
@@ -17,11 +17,11 @@ const BookingPage = ({ availableTimes, dispatch }) => {
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
             <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
-            </div>
           </div>
+        </div>
       )}
     </div>
   );
 };
 
-export default BookingPage
+export default BookingPage;

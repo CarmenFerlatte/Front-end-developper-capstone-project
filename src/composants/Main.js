@@ -5,13 +5,13 @@ import Chicago from './Chicago';
 import Temoignages from './Temoignages';
 import BookingPage from './BookingPage';
 
-const initializeAvailableTimes = () => {
+export const initializeAvailableTimes = () => {
   return [
     '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
   ];
 };
 
-const updateTimes = (state, action) => {
+export const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
       // Pour l'instant, on revoie les mêmes heures disponibles quelle que soit la date.
