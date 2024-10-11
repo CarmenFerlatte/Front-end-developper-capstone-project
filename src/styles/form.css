@@ -1,3 +1,17 @@
+.container__form {
+    display: flex;
+    flex-direction: column;
+    justify-content:first baseline;
+    align-items: top;
+    max-width: 1280px;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    padding-left: 10%;
+    background-color: #f7f3f3;
+}
+
+
 .reserver-h2 {
     padding-top: 50px;
     color: #495e57;
@@ -63,3 +77,17 @@ label {
 .red {
     color: red;
 }
+
+select {
+    -webkit-appearance: none; /* Pour Safari et Chrome */
+    -moz-appearance: none; /* Pour Firefox */
+    appearance: none; /* Pour les autres navigateurs */
+    background: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right center;
+    padding-right: 20px; /* Ajustez la valeur selon vos besoins */
+    background-color: white; /* Assurez-vous que le fond est blanc pour voir la flèche */
+    border: 1px solid #ccc; /* Ajoutez une bordure pour le style */
+  }
+  
+  select:hover, select:focus {
+    background-color: white; /* Assurez-vous que le fond reste blanc au survol et au focus */
+  }

@@ -38,18 +38,19 @@
   .header__container-text h2 {
       margin-top: -1rem;
   }
-  
+
   .header__container-text p {
       margin-top: 3rem;
   }
-  
+
   .header__container-img {
       grid-column: span 4;
       height: auto;
       margin: 0;
       position: relative;
+      border: 5px solid blue;
   }
-  
+
   .header__container-img img {
       width: 400px;
       height: auto;
@@ -58,7 +59,7 @@
       position: absolute;
       margin-top: -50%;
   }
-  
+
   button {
       background-color: #F4CE14;
       color: #333333;
@@ -68,9 +69,9 @@
       cursor: pointer;
       font-size: 18px;
       font-weight: 600;
-      width: 240px;
+      max-width: 240px;
       height: 60px;
-      margin-top: 3rem;
+      margin-top: 1rem;
       margin-bottom: 1rem;
   }
   

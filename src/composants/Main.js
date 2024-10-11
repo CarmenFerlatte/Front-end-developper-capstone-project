@@ -1,36 +1,35 @@
+// Main.js
 import React, { useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/main.css';
 import Specialisations from './Specialisations';
 import Chicago from './Chicago';
 import Temoignages from './Temoignages';
 import BookingPage from './BookingPage';
-
-export const initializeAvailableTimes = () => {
-  return [
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-  ];
-};
-
-export const updateTimes = (state, action) => {
-  switch (action.type) {
-    case 'UPDATE_TIMES':
-      // Pour l'instant, on revoie les mêmes heures disponibles quelle que soit la date.
-      return initializeAvailableTimes();
-    default:
-      return state;
-  }
-};
+import { initializeAvailableTimes, updateTimes } from '../js/utils';
+import { submitAPI } from '../js/api';
 
 const Main = () => {
   const [availableTimes, dispatch] = useReducer(updateTimes, initializeAvailableTimes());
-  console.log("dispatch in Main:", dispatch); // Ajoutez ce log pour vérifier `dispatch`
+  const navigate = useNavigate();
+
+  const submitForm = async (formData) => {
+    const result = submitAPI(formData);
+    if (result) {
+      navigate('/confirmation');  
+    } else {
+      alert("Désolé, il y a eu un problème lors de l'enregistrement de votre réservation. Veuillez réessayer.");
+    }
+  };
+
+  console.log("submitForm in Main:", submitForm);
 
   return (
     <div className="main">
       <Specialisations/>
       <Temoignages/>
       <Chicago/>
-      <BookingPage availableTimes={availableTimes} dispatch={dispatch} />
+      <BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
     </div>
   );
 };

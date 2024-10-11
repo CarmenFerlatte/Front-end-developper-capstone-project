@@ -3,6 +3,8 @@ import "../index.css";
 import { Routes, Route } from 'react-router-dom';
 import Accueil from '../pages/Accueil';
 import Reservations from '../pages/Reservations';
+import Confirmation from '../pages/Confirmation';
+
 
 const AppRoutes = () => {
   return (
@@ -10,6 +12,8 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<Accueil/>}/>
             <Route path="/reservations" element={<Reservations/>}/>
+            <Route path='/confirmation' element={<Confirmation/>}/>
+
         </Routes>
     </div>
   )
