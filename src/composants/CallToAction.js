@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/header.css';
-import bbq from '../images/restauranfood_500.png';
 import BookingPage from './BookingPage';
 import { fetchAPI, submitAPI } from '../js/api';
 
@@ -48,7 +47,6 @@ const CallToAction = () => {
           <BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
         </div>
         <div className='header__container-img'>
-          <img src={bbq} alt="plat cuisiné" />
         </div>
       </div>
     </div>

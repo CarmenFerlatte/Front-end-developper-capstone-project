@@ -26,17 +26,13 @@
     width: 100%;
     margin: 0 auto;
     padding: 0;
-    height: auto;
+    height: 450px;
   }
-  
+
   .header__container-text {
       grid-column: span 8;
-      margin-top: 2rem; 
-      margin-bottom: 2rem;
-  }
-  
-  .header__container-text h2 {
-      margin-top: -1rem;
+      align-self: start;
+      margin-top: 2rem;
   }
 
   .header__container-text p {
@@ -45,34 +41,38 @@
 
   .header__container-img {
       grid-column: span 4;
-      height: auto;
-      margin: 0;
-      position: relative;
-      border: 5px solid blue;
+      width: 342px;
+      height: 480px;
+      margin-top: 2rem;
+      position: top;
+      background-image: url('../images/restaurantfood_342x512.webp');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
   }
 
-  .header__container-img img {
+  /* .header__container-img img {
       width: 400px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 1px 0 0.5px #495e57;
       position: absolute;
-      margin-top: -50%;
-  }
+      margin-top: -45%;
+  } */
 
   button {
       background-color: #F4CE14;
       color: #333333;
-      border: none;
-      padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
       font-size: 18px;
       font-weight: 600;
-      max-width: 240px;
+      min-width: 200px;
       height: 60px;
       margin-top: 1rem;
       margin-bottom: 1rem;
+      border: none;
+      padding: 10px 20px;
   }
   
   button:hover {
