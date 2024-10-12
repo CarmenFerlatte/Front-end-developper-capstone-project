@@ -13,9 +13,9 @@
     width: 100%;
     margin: 0;
     padding: 0;
-  }
-  
-  .header__container {
+}
+
+.header__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
@@ -27,56 +27,123 @@
     margin: 0 auto;
     padding: 0;
     height: 450px;
-  }
+}
 
-  .header__container-text {
-      grid-column: span 8;
-      align-self: start;
-      margin-top: 2rem;
-  }
+.header__container-text {
+    grid-column: span 8;
+    align-self: start;
+    margin-top: 2rem;
+}
 
-  .header__container-text p {
-      margin-top: 3rem;
-  }
+.header__container-text p {
+    margin-top: 3rem;
+}
 
-  .header__container-img {
-      grid-column: span 4;
-      width: 342px;
-      height: 480px;
-      margin-top: 2rem;
-      position: top;
-      background-image: url('../images/restaurantfood_342x512.webp');
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px;
-  }
+.header__container-img {
+    grid-column: span 4;
+    width: 342px;
+    height: 480px;
+    margin-top: 2rem;
+    position: top;
+    background-image: url('../images/restaurantfood_342x512.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
 
-  /* .header__container-img img {
-      width: 400px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 1px 0 0.5px #495e57;
-      position: absolute;
-      margin-top: -45%;
-  } */
+.header__container button {
+    background-color: #F4CE14;
+    color: #333333;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    min-width: 200px;
+    height: 60px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    padding: 10px 20px;
+}
 
-  button {
-      background-color: #F4CE14;
-      color: #333333;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: 600;
-      min-width: 200px;
-      height: 60px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-      border: none;
-      padding: 10px 20px;
-  }
-  
-  button:hover {
-      background-color: #EDEFEE;
-      color: #495e57;
-  }
-  
+.header__container button:hover {
+    background-color: #EDEFEE;
+    color: #495e57;
+}
+/*------------------------------------------------------- */
+/*-------------------- Responsive Styles----------------- */
+/*------------------------------------------------------- */
+
+@media (max-width: 1280px) {
+    .header__container {
+        margin-left: 1.25rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header__container {
+        grid-template-columns: repeat(8, 1fr);
+        height: auto;
+    }
+
+    .header__container-text {
+        grid-column: span 6;
+    }
+
+    .header__container-img {
+        grid-column: span 2;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .header__container-text {
+        grid-column: span 4;
+        margin-top: 1rem;
+    }
+
+    .header__container-img {
+        grid-column: span 4;
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .header__container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        height: auto;
+    }
+
+    .header__container-text {
+        grid-column: span 1;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .header__container-img {
+        grid-column: span 1;
+        width: 100%;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .header__container button {
+        width: 100%;
+        font-size: 16px;
+        height: 50px;
+    }
+}
