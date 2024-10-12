@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/form.css';
+import { validateDate, validateTime, validateGuests, validateOccasion } from '../js/validation';
 
 const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
   const [date, setDate] = useState('');
@@ -18,12 +19,12 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = {};
-    if (!date) newErrors.date = 'La date est requise.';
-    if (!time) newErrors.time = "L'heure est requise.";
-    if (!guests) newErrors.guests = 'Le nombre de personnes est requis.';
-    if (!occasion) newErrors.occasion = "L'évènement est requis.";
+    newErrors.date = validateDate(date);
+    newErrors.time = validateTime(time);
+    newErrors.guests = validateGuests(guests);
+    newErrors.occasion = validateOccasion(occasion);
 
-    if (Object.keys(newErrors).length > 0) {
+    if (Object.values(newErrors).some(error => error)) {
       setErrors(newErrors);
     } else {
       setErrors({});
@@ -61,6 +62,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             aria-required="true"
             aria-label="Sélectionnez l'heure"
           >
+            <option>Sélectionnez</option>
             {availableTimes && availableTimes.map((time, index) => (
               <option key={index} value={time}>{time}</option>
             ))}
@@ -76,7 +78,7 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             min="1"
             max="10"
             id="guests"
-            value={guests} 
+            value={guests}
             onChange={(e) => setGuests(e.target.value)}
             aria-required="true"
             aria-label="Nombre de personnes"
@@ -93,9 +95,9 @@ const BookingForm = ({ availableTimes, dispatch, submitForm }) => {
             aria-required="true"
             aria-label="Évènement"
           >
+            <option>Sélectionnez</option>
             <option>Fête</option>
             <option>Anniversaire</option>
-            <option>Souper entre amis</option>
           </select>
           {errors.occasion && <span className="erreur">{errors.occasion}</span>}
         </div>

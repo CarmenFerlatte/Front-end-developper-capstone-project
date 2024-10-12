@@ -1,29 +1,43 @@
-import { initializeAvailableTimes, updateTimes } from './js/utils';
-import { fetchAPI } from './js/api';
+import { validateDate, validateTime, validateGuests, validateOccasion } from '../src/js/validation';
 
-// Mock de la fonction fetchAPI
-jest.mock('./js/api', () => ({
-  fetchAPI: jest.fn(),
-}));
+describe('Validation Functions', () => {
+  test('validateDate should return error message if date is empty', () => {
+    expect(validateDate('')).toBe('La date est requise.');
+  });
 
-test('updateTimes returns updated times', () => {
-  const initialState = [];
-  const action = { type: 'UPDATE_TIMES', date: '2023-10-10' };
-  const mockTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  
-  // Définir le comportement du mock pour fetchAPI
-  fetchAPI.mockImplementation(() => mockTimes);
+  test('validateDate should return empty string if date is provided', () => {
+    expect(validateDate('2023-10-01')).toBe('');
+  });
 
-  const updatedTimes = updateTimes(initialState, action);
-  expect(updatedTimes).toEqual(mockTimes);
-});
+  test('validateTime should return error message if time is empty', () => {
+    expect(validateTime('')).toBe("L'heure est requise.");
+  });
 
-test('initializeAvailableTimes returns correct initial times', () => {
-  const mockTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  
-  // Définir le comportement du mock pour fetchAPI
-  fetchAPI.mockImplementation(() => mockTimes);
+  test('validateTime should return empty string if time is provided', () => {
+    expect(validateTime('18:00')).toBe('');
+  });
 
-  const times = initializeAvailableTimes();
-  expect(times).toEqual(mockTimes);
+  test('validateGuests should return error message if guests is empty', () => {
+    expect(validateGuests('')).toBe('Le nombre de personnes est requis.');
+  });
+
+  test('validateGuests should return error message if guests is less than 1', () => {
+    expect(validateGuests(0)).toBe('Le nombre de personnes doit être entre 1 et 10.');
+  });
+
+  test('validateGuests should return error message if guests is more than 10', () => {
+    expect(validateGuests(11)).toBe('Le nombre de personnes doit être entre 1 et 10.');
+  });
+
+  test('validateGuests should return empty string if guests is between 1 and 10', () => {
+    expect(validateGuests(5)).toBe('');
+  });
+
+  test('validateOccasion should return error message if occasion is empty', () => {
+    expect(validateOccasion('')).toBe("L'évènement est requis.");
+  });
+
+  test('validateOccasion should return empty string if occasion is provided', () => {
+    expect(validateOccasion('Anniversaire')).toBe('');
+  });
 });
