@@ -37,6 +37,8 @@
 
 .header__container-text p {
     margin-top: 3rem;
+    font-size: 1.5rem;
+    font-weight: lighter;
 }
 
 .header__container-img {
@@ -90,6 +92,11 @@
         grid-column: span 6;
     }
 
+    .header__container-text p {
+        font-size: 1.3rem;
+        margin-top: 1.5rem;
+    }
+
     .header__container-img {
         grid-column: span 2;
         width: 100%;
@@ -106,6 +113,10 @@
     .header__container-text {
         grid-column: span 4;
         margin-top: 1rem;
+    }
+
+    .header__container-text p {
+        font-size: 1.2rem;
     }
 
     .header__container-img {
@@ -129,9 +140,12 @@
     }
 
     .header__container-text {
-        grid-column: span 1;
-        text-align: center;
+        grid-column: span 12;
         margin-top: 1rem;
+    }
+
+    .header__container-text p {
+        font-size: 1.1rem;
     }
 
     .header__container-img {
@@ -142,8 +156,9 @@
     }
 
     .header__container button {
-        width: 100%;
+        width: 30%;
         font-size: 16px;
-        height: 50px;
+        height: 40px;
+        margin-bottom: 0;
     }
 }

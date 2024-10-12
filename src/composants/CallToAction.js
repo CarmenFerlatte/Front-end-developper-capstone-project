@@ -41,7 +41,7 @@ const CallToAction = () => {
     <div className="header">
       <div className="header__container">
         <div className='header__container-text'>
-          <h1>Restaurant Petit Citron</h1>
+          <h1>Restaurant little Lemon</h1>
           <h2>Chicago</h2>
           <p>Le meilleur restaurant de la région. <br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br></br>sed do eiusmod tempor et dolore magna aliqua.</p>
           <BookingPage availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />

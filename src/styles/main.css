@@ -91,6 +91,8 @@
     font-size: 16px;
 }
 
+/*--------Section Spéciaux de la semaine---------*/
+
 .main__container-grid-menu {
     grid-column: span 4;
     width: 100%;
@@ -136,6 +138,7 @@
     color: red;
 }
 
+/*--------Section Témoignages---------*/
 
 .main__container-grid-item {
     grid-column: span 3;
@@ -193,6 +196,8 @@ aside {
     padding-left: 10px;
     font-weight: 800;
 }
+
+/*--------Section A propos---------*/
 
 .main__container-flex--apropos {
     display: flex;
@@ -304,9 +309,6 @@ aside {
         width: auto;
     }
 
-    .main__container-grid-menu {
-        grid-column: span 4;
-    }
 
     .main__container-grid-item {
         grid-column: span 4;
@@ -331,7 +333,7 @@ aside {
     }
 
     .main__container-grid-menu {
-        grid-column: span 1;
+        grid-column: span 6;
     }
 
     .main__container-grid-item {
