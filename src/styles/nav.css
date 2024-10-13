@@ -53,6 +53,7 @@
 .navbar__menu ul li {
   display: inline-block;
   font-size: 20px;
+  margin: 0 10px;
 }
 
 .navbar__menu ul li a {
@@ -76,6 +77,11 @@
 /*----------------------------*/
 /*-----------MEDIA-----------*/
 /*----------------------------*/
+@media screen and (max-width: 1200px) {
+  .navbar__menu ul li {
+    margin: 0 5px;
+  }
+}
 
 @media screen and (max-width: 900px) {
 

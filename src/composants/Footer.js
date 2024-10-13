@@ -5,7 +5,7 @@ import bbq from '../images/bbq.jpg';
 
 const footer = () => {
   return (
-    <div className='footer'>
+    <div id="section-contact">
       <div className='footer__container'>
         <div className='footer__container-img'>
           <img src={bbq} alt="plat cuisiné" />

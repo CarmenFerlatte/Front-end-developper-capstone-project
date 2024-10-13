@@ -6,7 +6,7 @@ import dessert from '../images/gateaucitron__600x385.png';
 
 const Specialisations = () => {
   return (
-    <div>
+    <div id="section-menu">
     <div className="main__container">
       <div className='main__container-flex'>
         <div className='main__container-flex-title'>

@@ -1,28 +1,48 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import BookingForm from '../composants/BookingForm';
+import { fetchAPI, submitAPI } from '../js/api';
 
-const initializeAvailableTimes = () => {
-  return [
-    '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-  ];
+const initializeAvailableTimes = async () => {
+  const today = new Date();
+  return fetchAPI(today);
 };
 
 const updateTimes = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // Pour l'instant, on revoie les mêmes heures disponibles quelle que soit la date.
-      return initializeAvailableTimes();
+      return fetchAPI(new Date(action.date));
     default:
       return state;
   }
 };
 
 const Reservations = () => {
-  const [availableTimes, dispatch] = useReducer(updateTimes, initializeAvailableTimes());
+  const navigate = useNavigate();
+  const [availableTimes, dispatch] = useReducer(updateTimes, []);
+
+  useEffect(() => {
+    const fetchInitialTimes = async () => {
+      const times = await initializeAvailableTimes();
+      dispatch({ type: 'INITIALIZE_TIMES', times });
+    };
+    fetchInitialTimes();
+  }, []);
+
+  const submitForm = async (formData) => {
+    console.log("formData in Reservations:", formData);
+    const dateObject = new Date(formData.date);
+    const result = await submitAPI({ ...formData, date: dateObject });
+    if (result) {
+      navigate('/confirmation');
+    } else {
+      alert("Désolé, il y a eu un problème lors de l'enregistrement de votre réservation. Veuillez réessayer.");
+    }
+  };
 
   return (
     <div>
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      <BookingForm availableTimes={availableTimes} dispatch={dispatch} submitForm={submitForm} />
     </div>
   );
 }

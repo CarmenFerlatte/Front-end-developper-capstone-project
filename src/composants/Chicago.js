@@ -6,7 +6,7 @@ import resto2 from '../images/restaurantfood_342x512.webp';
 
 const Chicago = () => {
   return (
-    <div>
+    <div id="section-chicago">
       <div className='container__chicago'>
 
           <div className='container__chicago-apropos'>
