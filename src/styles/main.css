@@ -20,28 +20,34 @@
 }
 
 .main__container-flex-title {
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-items: middle;
     width: 60%;
 }
 
 .main__container-flex-title h2 {
     font-size: 60px;
-    margin-bottom: 20px;
     font-family: 'Markazi Text', serif;
     font-weight: 800;
     color: #333333;
+    margin-left: 1.25rem;
     width: auto;
 }
 
 .main__container-flex-button {
     width: 35%;
     display: flex;
+    vertical-align: top;
     justify-content: flex-end;
 }
 
 .main__container-flex-button .main__container-button {
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 1rem;
+    margin-right: 1.25rem;
+    font-size: 20px;
+    box-shadow: 0 1px 0 0.5px #495e57;
 }
 
 .main__container-flex button {
@@ -85,7 +91,7 @@
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 1.25rem;
     height: auto;
     font-family: 'Karla', sans-serif;
     font-size: 16px;
@@ -264,7 +270,6 @@ aside {
 @media (max-width: 1024px) {
     .main__container-flex {
         flex-direction: row;
-        width: 90%;
     }
 
     .main__container-flex-title h2 {
@@ -273,10 +278,6 @@ aside {
 
     .main__container-flex-button {
         margin-top: -20px;
-    }
-
-    .main__container-grid {
-        width: 90%;
     }
 
     .main__container-grid-menu {
@@ -325,7 +326,13 @@ aside {
     }
 
     .main__container-flex-title h2 {
-        font-size: 24px;
+        font-size: 2rem;
+    }
+
+    .main__container-flex-button .main__container-button {
+        font-size: 14px;
+        padding-bottom: 5px;
+        padding-top: 5px;
     }
 
     .main__container-grid {
