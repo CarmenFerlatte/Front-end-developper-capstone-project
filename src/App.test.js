@@ -1,5 +1,6 @@
 import { validateDate, validateTime, validateGuests, validateOccasion } from '../src/js/validation';
 
+
 describe('Validation Functions', () => {
   test('validateDate should return error message if date is empty', () => {
     expect(validateDate('')).toBe('La date est requise.');
